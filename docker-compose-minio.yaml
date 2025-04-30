@@ -23,7 +23,13 @@ services:
       traefik.http.routers.minio.rule: Host(`minio.${HTTP_DOMAIN}`)
       traefik.http.routers.minio.tls: false
       traefik.http.services.minio.loadbalancer.server.port: 9001
+
+      traefik.http.routers.minio.middlewares: minio-iframe-headers
+      traefik.http.middlewares.minio-iframe-headers.headers.customresponseheaders.X-Frame-Options: ""
+      traefik.http.middlewares.minio-iframe-headers.headers.customresponseheaders.Content-Security-Policy: ""
     volumes:
       - /tmp/minio-test/0:/data
     networks:
       smo:
+
+
