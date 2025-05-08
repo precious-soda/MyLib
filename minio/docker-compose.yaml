@@ -6,7 +6,7 @@ networks:
 
 services:
   minio:
-    image: ${MINIO_IMAGE}
+    image: minio/minio
     container_name: minio-server
     command: server /data --console-address ":9001"
     environment:
