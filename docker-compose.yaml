@@ -152,7 +152,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - "8081:80"
+      - 8085:81
     depends_on:
       - odlux
     networks:
