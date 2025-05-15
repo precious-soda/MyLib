@@ -22,12 +22,12 @@ services:
 
   nginx-minio:
     image: nginx:latest
-    container_name: nginx-proxy-minio
+    container_name: nginx-minio-proxy
     volumes:
       - ./nginx-minio.conf:/etc/nginx/nginx.conf:ro
     ports:
       - "8087:82"
     depends_on:
-      - minio
+      - minio-server
     networks:
       - smo
