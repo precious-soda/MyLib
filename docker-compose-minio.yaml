@@ -22,7 +22,7 @@ services:
 
   nginx-minio:
     image: nginx:latest
-    container_name: nginx-proxy
+    container_name: nginx-proxy-minio
     volumes:
       - ./nginx-minio.conf:/etc/nginx/nginx.conf:ro
     ports:
