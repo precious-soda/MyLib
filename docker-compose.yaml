@@ -1,5 +1,4 @@
 # SPDX-License-Identifier: GPL-2.0-only
-version: '3.8'
 
 services:
   odlux:
@@ -148,15 +147,15 @@ services:
       - oam
 
   minio:
-    image: minio/minio
+    image: ${MINIO_IMAGE}
     container_name: minio-server
     command: server /data --console-address ":9001"
     environment:
       MINIO_ROOT_USER: admin
       MINIO_ROOT_PASSWORD: adminadmin
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - 9000:9000
+      - 9001:9001
     volumes:
       - /tmp/minio-test/0:/data
     networks:
