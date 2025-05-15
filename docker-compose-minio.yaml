@@ -26,7 +26,7 @@ services:
     volumes:
       - ./nginx-minio.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - "8081:82"
+      - "8087:82"
     depends_on:
       - minio
     networks:
